@@ -19,6 +19,12 @@ module.exports = {
     //   }
     // },
     {
+      resolve: `gatsby-plugin-typography`,
+      options: {
+        pathToConfigModule: `src/utils/typography`,
+      },
+    },
+    {
       resolve: 'gatsby-source-graphql',
       options: {
         // This type will contain remote schema Query type
