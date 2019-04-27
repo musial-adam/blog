@@ -5,7 +5,31 @@ module.exports = {
     author: `@gatsbyjs`,
   },
   plugins: [
-    `gatsby-plugin-eslint`,
+    // `gatsby-plugin-eslint`,
+    // {
+    //   resolve: 'gatsby-plugin-eslint',
+    //   options: {
+    //     test: /\.js$|\.jsx$/,
+    //     exclude: /(node_modules|.cache|public)/,
+    //     stages: ['develop'],
+    //     options: {
+    //       emitWarning: true,
+    //       failOnError: false,
+    //     }
+    //   }
+    // },
+    {
+      resolve: 'gatsby-source-graphql',
+      options: {
+        // This type will contain remote schema Query type
+        typeName: 'Blog',
+        // This is field under which it's accessible
+        fieldName: 'blog',
+        // Url to query from
+        url:
+          'https://api-euwest.graphcms.com/v1/cjuaamjqi0dr601ghwvspw9xm/master',
+      },
+    },
     `gatsby-plugin-react-helmet`,
     {
       resolve: `gatsby-source-filesystem`,
