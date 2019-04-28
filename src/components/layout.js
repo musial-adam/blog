@@ -13,7 +13,8 @@ import styled from 'styled-components'
 import Navigation from './navigation'
 import Header from './header'
 import Footer from './footer'
-import Image from "./image"
+import Image from './image'
+import BackgroundImage from './background-image'
 // import './layout.css'
 
 const LayoutContainer = styled.div`
@@ -66,8 +67,7 @@ const Layout = ({ children }) => (
       <h1>Banner</h1>
     </Banner>
     <LayoutLeft>
-      Photo section
-      <Image />
+      <BackgroundImage />
     </LayoutLeft>
     <LayoutRight>
       <Navigation />
