@@ -29,6 +29,10 @@ const Banner = styled.div`
   /* z-index: 1000; */
   height: 100vh;
   /* height: 100vh; */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  writing-mode: vertical-lr;
 `
 
 const LayoutLeft = styled.div`
@@ -57,7 +61,9 @@ const ContentBox = styled.div`
 
 const Layout = ({ children }) => (
   <LayoutContainer>
-    <Banner>Banner</Banner>
+    <Banner>
+      <h1>Banner</h1>
+    </Banner>
     <LayoutLeft>Photo section</LayoutLeft>
     <LayoutRight>
       <Navigation />

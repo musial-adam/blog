@@ -5,14 +5,22 @@ import React from 'react'
 import styled from 'styled-components'
 
 const StyledFooter = styled.footer`
-  background-color: orange;
+  border-top: 1px solid darkgrey;
+  background-color: white;
+  padding: 2% 5%;
 `
 
 const Footer = ({ siteTitle }) => (
   <StyledFooter>
-    <div>
-      <h1>Hi I am a footer</h1>
-    </div>
+    © {new Date().getFullYear()} {` `} Adam Musiał
+    <br />
+    Built with {` `}
+    <a href="https://www.gatsbyjs.org">Gatsby</a>
+    {`, `}
+    <a href="https://graphcms.com/">GraphCMS</a>
+    {` & `}
+    <a href="https://www.styled-components.com/">styled-components</a>
+    {`.`}
   </StyledFooter>
 )
 
