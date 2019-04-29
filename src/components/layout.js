@@ -10,6 +10,7 @@ import PropTypes from 'prop-types'
 import { StaticQuery, graphql } from 'gatsby'
 import styled from 'styled-components'
 
+import Banner from './banner'
 import Navigation from './navigation'
 import Header from './header'
 import Footer from './footer'
@@ -25,17 +26,17 @@ const LayoutContainer = styled.div`
   background-color: palevioletred;
 `
 
-const Banner = styled.div`
-  position: sticky;
-  top: 0;
-  /* z-index: 1000; */
-  height: 100vh;
-  /* height: 100vh; */
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  writing-mode: vertical-lr;
-`
+// const Banner = styled.div`
+//   position: sticky;
+//   top: 0;
+//   /* z-index: 1000; */
+//   height: 100vh;
+//   /* height: 100vh; */
+//   display: flex;
+//   flex-direction: column;
+//   justify-content: center;
+//   writing-mode: vertical-lr;
+// `
 
 const LayoutLeft = styled.div`
   position: sticky;
