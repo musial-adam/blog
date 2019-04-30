@@ -23,7 +23,11 @@ const LayoutContainer = styled.div`
   display: grid;
   position: relative;
   grid-template-columns: 50px 1fr 1fr;
-  background-color: palevioletred;
+  background-color: white;
+
+  /* @media (max-width: 700px) {
+    grid-template-columns: 100%;
+  } */
 `
 
 // const Banner = styled.div`
@@ -64,9 +68,7 @@ const ContentBox = styled.div`
 
 const Layout = ({ children }) => (
   <LayoutContainer>
-    <Banner>
-      <h1>Banner</h1>
-    </Banner>
+    <Banner>{/* <h1>Banner</h1> */}</Banner>
     <LayoutLeft>
       <BackgroundImage />
     </LayoutLeft>

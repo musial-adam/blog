@@ -5,6 +5,15 @@ module.exports = {
     author: `@gatsbyjs`,
   },
   plugins: [
+    {
+      resolve: 'gatsby-plugin-react-svg',
+      options: {
+        rule: {
+          include: /assets/,
+        },
+      },
+    },
+    'gatsby-plugin-svg-sprite',
     // `gatsby-plugin-eslint`,
     // {
     //   resolve: 'gatsby-plugin-eslint',
