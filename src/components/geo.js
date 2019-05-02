@@ -45,7 +45,7 @@ const GeoLocation = () => {
       {/* <StyledSVG>
         <use xlinkHref={icon} />
       </StyledSVG> */}
-      <SVGIcon icon="instagram" />
+      <SVGIcon icon="instagram" fill="orange"/>
     </GeoContainer>
   )
 }

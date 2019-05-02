@@ -4,6 +4,8 @@ import React from 'react'
 
 import styled from 'styled-components'
 
+import SVGIcon from './svg-icon'
+
 const StyledFooter = styled.footer`
   border-top: 1px solid darkgrey;
   background-color: white;
@@ -16,6 +18,9 @@ const Footer = ({ siteTitle }) => (
     <br />
     Built with {` `}
     <a href="https://www.gatsbyjs.org">Gatsby</a>
+    <a href="https://www.gatsbyjs.org">
+		  <SVGIcon icon="gatsby" fill="#663399" />
+		</a>
     {`, `}
     <a href="https://graphcms.com/">GraphCMS</a>
     {` & `}
