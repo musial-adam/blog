@@ -22,6 +22,11 @@ const IndexPage = () => (
       nihil hic tempore, itaque odio ullam veniam nobis neque illum dicta ut
       aliquid unde at error maiores fuga voluptatibus. Dolorum?
     </p>
+
+    <svg>
+      <use xlinkHref="/assets/sprite.svg#icon-google" />
+    </svg>
+
     <Link to="/page-2/">Go to page 2</Link>
   </Layout>
 )
