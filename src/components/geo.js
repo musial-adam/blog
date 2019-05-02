@@ -1,23 +1,28 @@
 import React from 'react'
 import styled from 'styled-components'
 
+import SVGIcon from './svg-icon'
+
 // import Location from '../assets/location.svg'
 
 const GeoContainer = styled.div`
   width: 50px;
   height: 50px;
-  background-color: pink;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+  background-color: black;
 `
 
-const StyledSVG = styled.svg`
-  box-sizing: border-box;
-  height: 30px;
-  width: 30px;
-  fill: blue;
-`
+// const StyledSVG = styled.svg`
+//   box-sizing: border-box;
+//   height: 30px;
+//   width: 30px;
+//   fill: purple;
+// `
 
 const GeoLocation = () => {
-  const icon = '/assets/sprite.svg#icon-google'
+  // const icon = '/assets/sprite.svg#icon-google'
 
   // console.log(icon)
 
@@ -37,9 +42,10 @@ const GeoLocation = () => {
           id="location"
         />
       </svg> */}
-      <StyledSVG>
+      {/* <StyledSVG>
         <use xlinkHref={icon} />
-      </StyledSVG>
+      </StyledSVG> */}
+      <SVGIcon icon="instagram" />
     </GeoContainer>
   )
 }

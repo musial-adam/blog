@@ -24,7 +24,7 @@ const IndexPage = () => (
     </p>
 
     <svg>
-      <use xlinkHref="/assets/sprite.svg#icon-google" />
+      <use xlinkHref="/assets/sprite.svg#icon-location" />
     </svg>
 
     <Link to="/page-2/">Go to page 2</Link>
