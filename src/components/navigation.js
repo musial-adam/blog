@@ -2,6 +2,8 @@ import React from 'react'
 import { Link } from 'gatsby'
 import styled from 'styled-components'
 
+import './navigation.css'
+
 const StyledNav = styled.nav`
   box-sizing: border-box;
   height: 50px;
@@ -13,52 +15,45 @@ const StyledNav = styled.nav`
   top: 0;
   z-index: 1000;
   background-color: white;
-  /*
-  background-color: transparent;
-  border: 1px solid red;
-  margin: 0 auto;
-  max-width: 960px;
-  text-transform: uppercase;
-  padding: 0px 1.0875rem 1.45rem;
-  padding-top: 0; */
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
 `
 
 const StyledLink = styled(Link)`
-  color: darkgray;
+  font-size: 14px;
+  font-family: 'Roboto Mono';
+  font-weight: 300;
+  color: #444444;
   text-shadow: none;
   text-decoration: none;
   background-image: none;
   letter-spacing: 0.1rem;
-  /* padding: 0rem 1rem; */
   margin: 0 1rem;
+
   &:nth-of-type(1) {
     margin-left: 0;
   }
+
   &:nth-of-type(4) {
     margin-right: 0;
   }
 
   &:hover {
-    color: blue;
+    color: #0077dd;
   }
 `
 
-const activeStyledLink = {
-  borderBottom: '1px solid blue',
-}
-
 const Navigation = () => (
   <StyledNav>
-    <StyledLink to="/" activeStyle={activeStyledLink}>
+    <StyledLink to="/" activeClassName="activeLink">
       Home
     </StyledLink>
-    <StyledLink to="/writing" activeStyle={activeStyledLink}>
+    <StyledLink to="/writing" activeClassName="activeLink">
       Writing
     </StyledLink>
-    <StyledLink to="/reading" activeStyle={activeStyledLink}>
+    <StyledLink to="/reading" activeClassName="activeLink">
       Reading
     </StyledLink>
-    <StyledLink to="/about" activeStyle={activeStyledLink}>
+    <StyledLink to="/about" activeClassName="activeLink">
       About
     </StyledLink>
   </StyledNav>

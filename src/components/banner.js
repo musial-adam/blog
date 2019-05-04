@@ -30,6 +30,7 @@ const Logo = styled.div`
 
   h4 {
     color: white;
+    font-weight: 100;
     line-height: 1;
     margin: 0;
     padding: 0;

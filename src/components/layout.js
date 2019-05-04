@@ -41,7 +41,7 @@ const ContentBox = styled.div`
   padding: 0 5%;
   /* margin: 0; */
   height: 100%;
-  background-color: beige;
+  background-color: white;
 `
 
 const Layout = ({ children }) => (

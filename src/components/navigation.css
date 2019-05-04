@@ -1,0 +1,7 @@
+.activeLink {
+	border-bottom: 1px solid #444444;	
+}
+
+.activeLink:hover {
+		border-bottom: 1px solid #0077dd;
+}
