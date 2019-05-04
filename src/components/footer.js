@@ -10,6 +10,7 @@ const StyledFooter = styled.footer`
   border-top: 1px solid darkgrey;
   background-color: white;
   padding: 2% 5%;
+  flex-shrink: 0; /* Footer if flex item within flex container - this blocks it from shrinking */
 `
 
 const Footer = ({ siteTitle }) => (
@@ -19,8 +20,8 @@ const Footer = ({ siteTitle }) => (
     Built with {` `}
     <a href="https://www.gatsbyjs.org">Gatsby</a>
     <a href="https://www.gatsbyjs.org">
-		  <SVGIcon icon="gatsby" fill="#663399" />
-		</a>
+      <SVGIcon icon="gatsby" fill="#663399" />
+    </a>
     {`, `}
     <a href="https://graphcms.com/">GraphCMS</a>
     {` & `}

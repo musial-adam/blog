@@ -12,48 +12,26 @@ import styled from 'styled-components'
 
 import Banner from './banner'
 import Navigation from './navigation'
-import Header from './header'
 import Footer from './footer'
 import Image from './image'
 import BackgroundImage from './background-image'
 // import './layout.css'
 
 const LayoutContainer = styled.div`
-  /* height: 100vh;  */
   display: grid;
   position: relative;
   grid-template-columns: 50px 1fr 1fr;
   background-color: white;
-
-  /* @media (max-width: 700px) {
-    grid-template-columns: 100%;
-  } */
 `
-
-// const Banner = styled.div`
-//   position: sticky;
-//   top: 0;
-//   /* z-index: 1000; */
-//   height: 100vh;
-//   /* height: 100vh; */
-//   display: flex;
-//   flex-direction: column;
-//   justify-content: center;
-//   writing-mode: vertical-lr;
-// `
 
 const LayoutLeft = styled.div`
   position: sticky;
   top: 0;
-  /* z-index: 1000; */
   height: 100vh;
-  /* height: 100vh; */
-  background-color: paleturquoise;
 `
 
 const LayoutRight = styled.div`
   padding: 0;
-  background-color: white;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -61,14 +39,14 @@ const LayoutRight = styled.div`
 
 const ContentBox = styled.div`
   padding: 0 5%;
-  margin: 0;
+  /* margin: 0; */
   height: 100%;
   background-color: beige;
 `
 
 const Layout = ({ children }) => (
   <LayoutContainer>
-    <Banner>{/* <h1>Banner</h1> */}</Banner>
+    <Banner />
     <LayoutLeft>
       <BackgroundImage />
     </LayoutLeft>

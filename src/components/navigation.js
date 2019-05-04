@@ -3,9 +3,12 @@ import { Link } from 'gatsby'
 import styled from 'styled-components'
 
 const StyledNav = styled.nav`
-  border: 1px solid black;
+  box-sizing: border-box;
+  height: 50px;
+  flex-shrink: 0; /* Navigation if flex item within flex container - this blocks it from shrinking */
   display: flex;
   justify-content: center;
+  align-items: center;
   position: sticky;
   top: 0;
   z-index: 1000;
