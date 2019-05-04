@@ -18,7 +18,7 @@ const SVGIcon = ({ icon, fill }) => {
   const iconID = `/assets/symbol-defs.svg#icon-${icon}`
 
   return (
-    <StyledSVG style={{fill: fill}}>
+    <StyledSVG style={{ fill }}>
       <use xlinkHref={iconID} />
     </StyledSVG>
   )

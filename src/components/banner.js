@@ -1,5 +1,5 @@
 import React from 'react'
-import PropTypes from 'prop-types'
+// import PropTypes from 'prop-types'
 import { StaticQuery, graphql } from 'gatsby'
 import styled from 'styled-components'
 
@@ -8,9 +8,7 @@ import GeoLocation from './geo'
 const BannerContainer = styled.div`
   position: sticky;
   top: 0;
-  /* z-index: 1000; */
   height: 100vh;
-  /* height: 100vh; */
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -19,13 +17,11 @@ const BannerContainer = styled.div`
 const Logo = styled.div`
   writing-mode: vertical-lr;
   background-color: black;
-  /* color: black; */
   width: 100%;
   height: 200px;
   display: flex;
   justify-content: center;
   align-items: center;
-  /* padding: 5% 10%; */
 
   &:hover {
     cursor: pointer;
@@ -43,13 +39,7 @@ const Logo = styled.div`
   }
 `
 
-// const GeoLocation = styled.div`
-//   width: 50px;
-//   height: 50px;
-//   background-color: black;
-// `
-
-const Banner = ({ children }) => (
+const Banner = () => (
   <StaticQuery
     query={graphql`
       query SiteTitleQuery {
