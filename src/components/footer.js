@@ -7,7 +7,11 @@ import styled from 'styled-components'
 import SVGIcon from './svg-icon'
 
 const StyledFooter = styled.footer`
-  border-top: 1px solid darkgrey;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+  font-family: 'Roboto Mono';
+  font-size: 14px;
+  font-weight: 300;
+  color: #444444;
   background-color: white;
   padding: 2% 5%;
   flex-shrink: 0; /* Footer if flex item within flex container - this blocks it from shrinking */
