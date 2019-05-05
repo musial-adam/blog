@@ -8,17 +8,17 @@ const StyledSVG = styled.svg`
   box-sizing: border-box;
   height: 30px;
   width: 30px;
-  /* fill: grey; */
 `
 
 // SVG Icon component
 // String concat in order to use with SVG Sprite - adjust sprite path
+// className is added here only to allow styles override with styled method from styled-components
 
-const SVGIcon = ({ icon, fill }) => {
+const SVGIcon = ({ className, icon, fill }) => {
   const iconID = `/assets/symbol-defs.svg#icon-${icon}`
 
   return (
-    <StyledSVG style={{ fill }}>
+    <StyledSVG className={className} style={{ fill }}>
       <use xlinkHref={iconID} />
     </StyledSVG>
   )
@@ -26,7 +26,13 @@ const SVGIcon = ({ icon, fill }) => {
 
 SVGIcon.propTypes = {
   icon: PropTypes.string.isRequired,
-  fill: PropTypes.string.isRequired,
+  className: PropTypes.string,
+  fill: PropTypes.string,
+}
+
+SVGIcon.defaultProps = {
+  className: '',
+  fill: '',
 }
 
 export default SVGIcon
