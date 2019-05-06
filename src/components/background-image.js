@@ -32,8 +32,18 @@ const BackgroundSection = ({ className }) => (
 )
 
 const StyledBackgroundSection = styled(BackgroundSection)`
-  /* width: 100%; */
-  height: 100%;
+  /* position: fixed;
+  top: 0;
+  left: 50px;
+  background-color: red;
+  height: 100vh;
+  width: calc(50vw - (100vw - 100%) - 50px);
+
+  @media (max-width: 1000px) {
+    position: static;
+    width: 100vw;
+  } */
+
   background: hsl(90, 50%, 90%);
   background-blend-mode: multiply;
   background-position: 50% 20%;
@@ -42,3 +52,4 @@ const StyledBackgroundSection = styled(BackgroundSection)`
 `
 
 export default StyledBackgroundSection
+// export default BackgroundSection

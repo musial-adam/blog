@@ -98,7 +98,7 @@ const Logo = styled.div`
 const Banner = () => (
   <StaticQuery
     query={graphql`
-      query SiteTitleQuery {
+      query SiteTitleQueryInBanner {
         site {
           siteMetadata {
             title

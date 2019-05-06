@@ -19,17 +19,19 @@ import BackgroundImage from './background-image'
 import Logo from './logo'
 // import './layout.css'
 
-const LayoutContainer = styled.div`
-  display: grid;
-  position: relative;
-  grid-template-columns: 1fr 1fr;
-  /* grid-template-columns: 50px 1fr 1fr; */
-  background-color: white;
+import Header from './header'
 
-  @media (max-width: 1000px) {
-    grid-template-columns: 100%;
-  }
-`
+// const LayoutContainer = styled.div`
+//   display: grid;
+//   position: relative;
+//   grid-template-columns: 1fr 1fr;
+//   /* grid-template-columns: 50px 1fr 1fr; */
+//   background-color: white;
+
+//   @media (max-width: 1000px) {
+//     grid-template-columns: 100%;
+//   }
+// `
 
 const LayoutLeft = styled.div`
   position: sticky;
@@ -51,21 +53,48 @@ const ContentBox = styled.div`
   background-color: white;
 `
 
+const LayoutContainer = styled.div`
+  position: relative;
+
+  /* background-color: pink; */
+`
+
+const BackgroundBox = styled.div`
+  position: fixed;
+  top: 0;
+  left: 50px;
+  background-color: red;
+  height: 100vh;
+  width: calc(50vw - (100vw - 100%) - 50px);
+
+  @media (max-width: 1000px) {
+    position: static;
+    width: 100vw;
+  }
+`
+
 const Layout = ({ children }) => (
   <LayoutContainer>
-    {/* <Banner /> */}
-    <Logo>
-      <h4>Adam Musiał</h4>
-    </Logo>
-    <LayoutLeft>
-      <BackgroundImage />
-    </LayoutLeft>
-    <LayoutRight>
-      <Navigation />
-      <ContentBox>{children}</ContentBox>
-      <Footer />
-    </LayoutRight>
+    <Header />
+    <BackgroundBox />
   </LayoutContainer>
 )
+
+// const Layout = ({ children }) => (
+//   <LayoutContainer>
+//     {/* <Banner /> */}
+//     <Logo>
+//       <h4>Adam Musiał</h4>
+//     </Logo>
+//     <LayoutLeft>
+//       <BackgroundImage />
+//     </LayoutLeft>
+//     <LayoutRight>
+//       <Navigation />
+//       <ContentBox>{children}</ContentBox>
+//       <Footer />
+//     </LayoutRight>
+//   </LayoutContainer>
+// )
 
 export default Layout

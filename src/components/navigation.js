@@ -5,18 +5,42 @@ import styled from 'styled-components'
 import './navigation.css'
 
 const StyledNav = styled.nav`
-  box-sizing: border-box;
   height: 50px;
-  flex-shrink: 0; /* Navigation if flex item within flex container - this blocks it from shrinking */
+  width: 50vw;
+
+  @media (max-width: 700px) {
+    width: 100%;
+  }
+
+  @media (max-width: 1000px) {
+    width: 100%;
+  }
+
+  box-sizing: border-box;
+  /* flex-shrink: 0; /* Navigation if flex item within flex container - this blocks it from shrinking */
+
   display: flex;
   justify-content: center;
   align-items: center;
-  position: sticky;
-  top: 0;
-  z-index: 1000;
+  /* position: sticky; */
+  /* top: 0; */
+  /* z-index: 1000; */
   background-color: white;
   border-bottom: 1px solid rgba(0, 0, 0, 0.1);
 `
+// const StyledNav = styled.nav`
+//   box-sizing: border-box;
+//   height: 50px;
+//   flex-shrink: 0; /* Navigation if flex item within flex container - this blocks it from shrinking */
+//   display: flex;
+//   justify-content: center;
+//   align-items: center;
+//   position: sticky;
+//   top: 0;
+//   z-index: 1000;
+//   background-color: white;
+//   border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+// `
 
 const StyledLink = styled(Link)`
   font-size: 14px;
