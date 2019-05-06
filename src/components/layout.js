@@ -15,13 +15,20 @@ import Navigation from './navigation'
 import Footer from './footer'
 import Image from './image'
 import BackgroundImage from './background-image'
+
+import Logo from './logo'
 // import './layout.css'
 
 const LayoutContainer = styled.div`
   display: grid;
   position: relative;
-  grid-template-columns: 50px 1fr 1fr;
+  grid-template-columns: 1fr 1fr;
+  /* grid-template-columns: 50px 1fr 1fr; */
   background-color: white;
+
+  @media (max-width: 1000px) {
+    grid-template-columns: 100%;
+  }
 `
 
 const LayoutLeft = styled.div`
@@ -46,7 +53,10 @@ const ContentBox = styled.div`
 
 const Layout = ({ children }) => (
   <LayoutContainer>
-    <Banner />
+    {/* <Banner /> */}
+    <Logo>
+      <h4>Adam Musiał</h4>
+    </Logo>
     <LayoutLeft>
       <BackgroundImage />
     </LayoutLeft>
@@ -57,43 +67,5 @@ const Layout = ({ children }) => (
     </LayoutRight>
   </LayoutContainer>
 )
-
-// const Layout = ({ children }) => (
-//   <StaticQuery
-//     query={graphql`
-//       query SiteTitleQuery {
-//         site {
-//           siteMetadata {
-//             title
-//           }
-//         }
-//       }
-//     `}
-//     render={data => (
-//       <>
-//         <Header siteTitle={data.site.siteMetadata.title} />
-//         <div
-//           style={{
-//             margin: `0 auto`,
-//             maxWidth: 960,
-//             padding: `0px 1.0875rem 1.45rem`,
-//             paddingTop: 0,
-//           }}
-//         >
-//           <main>{children}</main>
-//           <footer>
-//             © {new Date().getFullYear()}, Built with
-//             {` `}
-//             <a href="https://www.gatsbyjs.org">Gatsby</a>
-//           </footer>
-//         </div>
-//       </>
-//     )}
-//   />
-// )
-
-// Layout.propTypes = {
-//   children: PropTypes.node.isRequired,
-// }
 
 export default Layout
