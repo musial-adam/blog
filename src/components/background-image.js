@@ -8,7 +8,7 @@ const BackgroundSection = ({ className }) => (
   <StaticQuery
     query={graphql`
       query {
-        desktop: file(relativePath: { eq: "photo2.jpg" }) {
+        desktop: file(relativePath: { eq: "photo3.jpg" }) {
           childImageSharp {
             fluid(quality: 100, maxWidth: 4160) {
               ...GatsbyImageSharpFluid_withWebp
@@ -34,6 +34,8 @@ const BackgroundSection = ({ className }) => (
 const StyledBackgroundSection = styled(BackgroundSection)`
   /* width: 100%; */
   height: 100%;
+  background: hsl(90, 50%, 90%);
+  background-blend-mode: multiply;
   background-position: 50% 20%;
   background-repeat: no-repeat;
   background-size: cover;

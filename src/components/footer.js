@@ -1,5 +1,3 @@
-import { Link } from 'gatsby'
-import PropTypes from 'prop-types'
 import React from 'react'
 
 import styled from 'styled-components'
@@ -18,32 +16,18 @@ const FooterSVG = styled(SVGIcon)`
 `
 
 const FooterText = styled.div`
-  /* display: inline-block; */
-  border: 1px solid red;
   max-width: 500px;
   padding: 0;
+  margin-right: 50px;
+  flex-shrink: 0;
 `
 
 const SVGsBox = styled.div`
   width: 100px;
   display: flex;
   justify-content: space-between;
-  border: 1px solid red;
-  padding-top: 2px;
   flex-shrink: 0;
-  /* align-self: baseline; */
-`
-
-const FirstLine = styled.div`
-  border: 1px solid darkblue;
-  height: 30px;
-  display: flex;
-  justify-content: space-between;
-
-  p {
-    display: inline-block;
-    /* max-width: 500px; */
-  }
+  align-self: flex-start;
 `
 
 const StyledFooter = styled.footer`
@@ -55,36 +39,16 @@ const StyledFooter = styled.footer`
   font-weight: 300;
   color: #444444;
   background-color: white;
-  padding: 20px 30px;
+  padding: 30px 40px;
   flex-shrink: 0; /* Footer if flex item within flex container - this blocks it from shrinking */
-  /* display: flex;
+  display: flex;
   justify-content: space-between;
-  align-items: center; */
+  align-items: center;
 `
 
-const Footer = ({ siteTitle }) => (
+const Footer = () => (
   <StyledFooter>
-    <FirstLine>
-      <p>
-        © {new Date().getFullYear()} {` `} Adam Musiał
-      </p>
-      <SVGsBox>
-        <FooterSVG icon="github" />
-        <FooterSVG icon="twitter" />
-        <FooterSVG icon="instagram" />
-      </SVGsBox>
-    </FirstLine>
     <FooterText>
-      <br />
-      Built with {` `}
-      <a href="https://www.gatsbyjs.org">Gatsby</a>
-      {`, `}
-      <a href="https://graphcms.com/">GraphCMS</a>
-      {` & `}
-      <a href="https://www.styled-components.com/">styled-components</a>
-      {`.`}
-    </FooterText>
-    {/* <FooterText>
       © {new Date().getFullYear()} {` `} Adam Musiał
       <br />
       Built with {` `}
@@ -94,28 +58,13 @@ const Footer = ({ siteTitle }) => (
       {` & `}
       <a href="https://www.styled-components.com/">styled-components</a>
       {`.`}
-    </FooterText> */}
+    </FooterText>
+    <SVGsBox>
+      <FooterSVG icon="github" />
+      <FooterSVG icon="twitter" />
+      <FooterSVG icon="instagram" />
+    </SVGsBox>
   </StyledFooter>
 )
-// const Footer = ({ siteTitle }) => (
-//   <StyledFooter>
-//     <FooterText>
-//       © {new Date().getFullYear()} {` `} Adam Musiał
-//       <br />
-//       Built with {` `}
-//       <a href="https://www.gatsbyjs.org">Gatsby</a>
-//       {`, `}
-//       <a href="https://graphcms.com/">GraphCMS</a>
-//       {` & `}
-//       <a href="https://www.styled-components.com/">styled-components</a>
-//       {`.`}
-//     </FooterText>
-//     <SVGsBox>
-//       <FooterSVG icon="github" />
-//       <FooterSVG icon="twitter" />
-//       <FooterSVG icon="instagram" />
-//     </SVGsBox>
-//   </StyledFooter>
-// )
 
 export default Footer
