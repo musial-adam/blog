@@ -21,42 +21,27 @@ import Logo from './logo'
 
 import Header from './header'
 
-// const LayoutContainer = styled.div`
-//   display: grid;
-//   position: relative;
-//   grid-template-columns: 1fr 1fr;
-//   /* grid-template-columns: 50px 1fr 1fr; */
-//   background-color: white;
-
-//   @media (max-width: 1000px) {
-//     grid-template-columns: 100%;
-//   }
-// `
-
-const LayoutLeft = styled.div`
-  position: sticky;
-  top: 0;
-  height: 100vh;
-`
-
-const LayoutRight = styled.div`
-  padding: 0;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-`
-
-const ContentBox = styled.div`
-  padding: 0 5%;
-  /* margin: 0; */
-  height: 100%;
-  background-color: white;
-`
-
 const LayoutContainer = styled.div`
-  position: relative;
+  /* position: relative; */
+`
 
-  /* background-color: pink; */
+const ContentBox = styled.main`
+  min-height: 90vh;
+  width: 50vw;
+  margin-left: calc(50vw - (100vw - 100%));
+  background-color: pink;
+
+  border: 2px solid darkcyan;
+
+  /* position: fixed;
+  top: 50px;
+  left: calc(50vw - (100vw - 100%)); */
+
+  @media (max-width: 1000px) {
+    /* position: static; */
+    width: 100vw;
+    margin-left: 0;
+  }
 `
 
 const BackgroundBox = styled.div`
@@ -76,7 +61,9 @@ const BackgroundBox = styled.div`
 const Layout = ({ children }) => (
   <LayoutContainer>
     <Header />
-    <BackgroundBox />
+    {/* <BackgroundBox /> */}
+    <ContentBox>{children}</ContentBox>
+    <Footer />
   </LayoutContainer>
 )
 

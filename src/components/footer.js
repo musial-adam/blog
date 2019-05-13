@@ -34,6 +34,8 @@ const StyledFooter = styled.footer`
   box-sizing: border-box;
   border-top: 1px solid rgba(0, 0, 0, 0.1);
   height: 100px;
+  width: 50vw;
+  margin-left: calc(50vw - (100vw - 100%));
   font-family: 'Roboto Mono';
   font-size: 14px;
   font-weight: 300;
@@ -44,6 +46,15 @@ const StyledFooter = styled.footer`
   display: flex;
   justify-content: space-between;
   align-items: center;
+
+  /* position: fixed;
+  bottom: 0;
+  right: 0; */
+
+  @media (max-width: 1000px) {
+    width: 100vw;
+    margin-left: 0;
+  }
 `
 
 const Footer = () => (
