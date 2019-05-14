@@ -32,7 +32,7 @@ const BackgroundSection = ({ className }) => (
 )
 
 const StyledBackgroundSection = styled(BackgroundSection)`
-  /* position: fixed;
+  position: fixed;
   top: 0;
   left: 50px;
   background-color: red;
@@ -42,7 +42,7 @@ const StyledBackgroundSection = styled(BackgroundSection)`
   @media (max-width: 1000px) {
     position: static;
     width: 100vw;
-  } */
+  }
 
   background: hsl(90, 50%, 90%);
   background-blend-mode: multiply;

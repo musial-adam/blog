@@ -9,8 +9,9 @@ const StyledHeader = styled.header`
   height: 50px;
   overflow: visible;
   display: flex;
-
   justify-content: space-between;
+
+  position: relative;
 
   @media (max-width: 700px) {
     height: 100px;

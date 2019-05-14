@@ -14,6 +14,7 @@ const StyledNav = styled.nav`
 
   @media (max-width: 1000px) {
     width: 100%;
+    position: static;
   }
 
   box-sizing: border-box;
@@ -22,7 +23,9 @@ const StyledNav = styled.nav`
   display: flex;
   justify-content: center;
   align-items: center;
-  /* position: sticky; */
+
+  position: absolute;
+  right: 0;
   /* top: 0; */
   /* z-index: 1000; */
   background-color: white;

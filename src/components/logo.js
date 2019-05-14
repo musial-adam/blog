@@ -15,10 +15,13 @@ const StyledLogo = styled.div`
 
   writing-mode: vertical-lr;
 
+  position: fixed;
+
   @media (max-width: 1000px) {
     writing-mode: horizontal-tb;
     height: 50px;
     width: 200px;
+    position: static;
   }
 
   @media (max-width: 700px) {

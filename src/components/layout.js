@@ -22,11 +22,11 @@ import Logo from './logo'
 import Header from './header'
 
 const LayoutContainer = styled.div`
-  /* position: relative; */
+  position: relative;
 `
 
 const ContentBox = styled.main`
-  min-height: 90vh;
+  height: 100%;
   width: 50vw;
   margin-left: calc(50vw - (100vw - 100%));
   background-color: pink;
@@ -48,7 +48,8 @@ const BackgroundBox = styled.div`
   position: fixed;
   top: 0;
   left: 50px;
-  background-color: red;
+  /* background-color: red; */
+  border: 3px solid yellow;
   height: 100vh;
   width: calc(50vw - (100vw - 100%) - 50px);
 
@@ -61,7 +62,9 @@ const BackgroundBox = styled.div`
 const Layout = ({ children }) => (
   <LayoutContainer>
     <Header />
-    {/* <BackgroundBox /> */}
+    {/* <BackgroundBox> */}
+    <BackgroundImage />
+    {/* </BackgroundBox> */}
     <ContentBox>{children}</ContentBox>
     <Footer />
   </LayoutContainer>
