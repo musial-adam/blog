@@ -16,6 +16,7 @@ const StyledLogo = styled.div`
   writing-mode: vertical-lr;
 
   position: fixed;
+  z-index: 20000;
 
   @media (max-width: 1000px) {
     writing-mode: horizontal-tb;
@@ -27,7 +28,7 @@ const StyledLogo = styled.div`
   @media (max-width: 700px) {
     writing-mode: horizontal-tb;
     height: 50px;
-    width: 100vw;
+    width: 100%;
   }
 
   &:hover {

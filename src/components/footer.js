@@ -42,17 +42,21 @@ const StyledFooter = styled.footer`
   color: #444444;
   background-color: white;
   padding: 30px 40px;
-  flex-shrink: 0; /* Footer if flex item within flex container - this blocks it from shrinking */
+  /* overflow: hidden; */
+  /*flex-shrink: 0;  Footer if flex item within flex container - this blocks it from shrinking */
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
+
+  border: 3px solid blue;
 
   /* position: fixed;
   bottom: 0;
   right: 0; */
 
   @media (max-width: 1000px) {
-    width: 100vw;
+    width: 100%;
     margin-left: 0;
   }
 `

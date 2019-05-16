@@ -41,9 +41,11 @@ const StyledBackgroundSection = styled(BackgroundSection)`
   width: calc(50vw - (100vw - 100%) - 50px);
 
   @media (max-width: 1000px) {
-    /* position: static; */
-    left: 0;
-    width: 100vw;
+    position: static;
+    width: 100%;
+    height: auto;
+    /* left: 0;
+    width: 100vw; */
   }
 
   background: hsl(90, 50%, 90%);

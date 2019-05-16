@@ -30,6 +30,7 @@ const StyledNav = styled.nav`
   /* z-index: 1000; */
   background-color: white;
   border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  border: 3px solid red;
 `
 // const StyledNav = styled.nav`
 //   box-sizing: border-box;

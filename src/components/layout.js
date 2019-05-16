@@ -23,15 +23,20 @@ import Header from './header'
 
 const LayoutContainer = styled.div`
   position: relative;
+  /* border: 3px solid transparent; */
 `
 
 const ContentBox = styled.main`
-  height: 100%;
+  /* height: 100%; */
+  box-sizing: border-box;
+  min-height: calc(100vh - 150px);
+
   width: 50vw;
   margin-left: calc(50vw - (100vw - 100%));
   background-color: pink;
 
   border: 2px solid darkcyan;
+  padding: 20px;
 
   /* position: fixed;
   top: 50px;
@@ -39,7 +44,7 @@ const ContentBox = styled.main`
 
   @media (max-width: 1000px) {
     /* position: static; */
-    width: 100vw;
+    width: 100%;
     margin-left: 0;
   }
 `
@@ -53,9 +58,13 @@ const BackgroundBox = styled.div`
 
   border: 3px solid orange;
 
+  overflow: hidden;
+
   @media (max-width: 1000px) {
     position: static;
-    width: calc(100vw - (100vw - 100%));
+    height: 80vh;
+    width: 100%;
+    /* width: calc(100vw - (100vw - 100%)); */
     /* width: 100vw; */
   }
 `
@@ -63,9 +72,7 @@ const BackgroundBox = styled.div`
 const Layout = ({ children }) => (
   <LayoutContainer>
     <Header />
-    <BackgroundBox>
-      <BackgroundImage />
-    </BackgroundBox>
+    <BackgroundBox>{/* <BackgroundImage /> */}</BackgroundBox>
     <ContentBox>{children}</ContentBox>
     <Footer />
   </LayoutContainer>
