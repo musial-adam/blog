@@ -35,12 +35,14 @@ const StyledBackgroundSection = styled(BackgroundSection)`
   position: fixed;
   top: 0;
   left: 50px;
-  background-color: red;
+  /* background-color: red; */
+  /* border: 3px solid yellow; */
   height: 100vh;
   width: calc(50vw - (100vw - 100%) - 50px);
 
   @media (max-width: 1000px) {
-    position: static;
+    /* position: static; */
+    left: 0;
     width: 100vw;
   }
 
@@ -50,6 +52,26 @@ const StyledBackgroundSection = styled(BackgroundSection)`
   background-repeat: no-repeat;
   background-size: cover;
 `
+
+// const StyledBackgroundSection = styled(BackgroundSection)`
+//   position: fixed;
+//   top: 0;
+//   left: 50px;
+//   background-color: red;
+//   height: 100vh;
+//   width: calc(50vw - (100vw - 100%) - 50px);
+
+//   @media (max-width: 1000px) {
+//     position: static;
+//     width: 100vw;
+//   }
+
+//   background: hsl(90, 50%, 90%);
+//   background-blend-mode: multiply;
+//   background-position: 50% 20%;
+//   background-repeat: no-repeat;
+//   background-size: cover;
+// `
 
 export default StyledBackgroundSection
 // export default BackgroundSection

@@ -48,23 +48,24 @@ const BackgroundBox = styled.div`
   position: fixed;
   top: 0;
   left: 50px;
-  /* background-color: red; */
-  border: 3px solid yellow;
   height: 100vh;
   width: calc(50vw - (100vw - 100%) - 50px);
 
+  border: 3px solid orange;
+
   @media (max-width: 1000px) {
     position: static;
-    width: 100vw;
+    width: calc(100vw - (100vw - 100%));
+    /* width: 100vw; */
   }
 `
 
 const Layout = ({ children }) => (
   <LayoutContainer>
     <Header />
-    {/* <BackgroundBox> */}
-    <BackgroundImage />
-    {/* </BackgroundBox> */}
+    <BackgroundBox>
+      <BackgroundImage />
+    </BackgroundBox>
     <ContentBox>{children}</ContentBox>
     <Footer />
   </LayoutContainer>
