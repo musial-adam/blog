@@ -5,45 +5,33 @@
  * See: https://www.gatsbyjs.org/docs/static-query/
  */
 
-import React from 'react'
+// import { StaticQuery, graphql } from 'gatsby'
 import PropTypes from 'prop-types'
-import { StaticQuery, graphql } from 'gatsby'
+import React from 'react'
 import styled from 'styled-components'
 
-import Banner from './banner'
-import Navigation from './navigation'
+// import BackgroundImage from './background-image'
 import Footer from './footer'
-import Image from './image'
-import BackgroundImage from './background-image'
-
-import Logo from './logo'
-// import './layout.css'
-
 import Header from './header'
+// import Image from './image'
+
+// import './layout.css'
 
 const LayoutContainer = styled.div`
   position: relative;
-  /* border: 3px solid transparent; */
 `
 
 const ContentBox = styled.main`
-  /* height: 100%; */
-  box-sizing: border-box;
   min-height: calc(100vh - 150px);
-
   width: 50vw;
   margin-left: calc(50vw - (100vw - 100%));
-  background-color: pink;
-
-  border: 2px solid darkcyan;
   padding: 20px;
 
-  /* position: fixed;
-  top: 50px;
-  left: calc(50vw - (100vw - 100%)); */
+  /* CSS only for layout in dev stage */
+  background-color: pink;
+  border: 3px solid darkcyan;
 
   @media (max-width: 1000px) {
-    /* position: static; */
     width: 100%;
     margin-left: 0;
   }
@@ -56,28 +44,22 @@ const BackgroundBox = styled.div`
   height: 100vh;
   width: calc(50vw - (100vw - 100%) - 50px);
 
+  /* CSS only for layout in dev stage */
   border: 3px solid orange;
-  /* background-color: palegoldenrod; */
-
-  /* overflow: hidden; */
 
   background-image: url('/assets/photo3.jpg');
   background-color: hsl(348.5, 50%, 90%);
   background-blend-mode: multiply;
-  /* background-position: 50% 20%; */
+  background-position: 50% 20%;
   background-repeat: no-repeat;
   background-size: cover;
 
   @media (max-width: 1000px) {
-    background-position: 50% 10%;
-
     position: static;
-    /* height: 80vh; */
     width: 100%;
     height: auto;
-    padding-top: 60%;
-    /* width: calc(100vw - (100vw - 100%)); */
-    /* width: 100vw; */
+    padding-bottom: 60%; /* This is the CSS trick to force a div to keep its aspect ratio */
+    background-position: 50% 10%;
   }
 `
 
@@ -90,21 +72,8 @@ const Layout = ({ children }) => (
   </LayoutContainer>
 )
 
-// const Layout = ({ children }) => (
-//   <LayoutContainer>
-//     {/* <Banner /> */}
-//     <Logo>
-//       <h4>Adam Musiał</h4>
-//     </Logo>
-//     <LayoutLeft>
-//       <BackgroundImage />
-//     </LayoutLeft>
-//     <LayoutRight>
-//       <Navigation />
-//       <ContentBox>{children}</ContentBox>
-//       <Footer />
-//     </LayoutRight>
-//   </LayoutContainer>
-// )
+Layout.propTypes = {
+  children: PropTypes.node.isRequired,
+}
 
 export default Layout

@@ -16,9 +16,10 @@ const FooterSVG = styled(SVGIcon)`
 `
 
 const FooterText = styled.div`
-  max-width: 500px;
+  /* border: 1px dashed black; */
+  min-width: 410px;
   padding: 0;
-  margin-right: 50px;
+  /* margin-right: 50px; */
   flex-shrink: 0;
 `
 
@@ -45,7 +46,7 @@ const StyledFooter = styled.footer`
   /* overflow: hidden; */
   /*flex-shrink: 0;  Footer if flex item within flex container - this blocks it from shrinking */
   display: flex;
-  flex-wrap: wrap;
+  /* flex-wrap: wrap; */
   justify-content: space-between;
   align-items: center;
 
@@ -55,9 +56,21 @@ const StyledFooter = styled.footer`
   bottom: 0;
   right: 0; */
 
+  @media (max-width: 1300px) and (min-width: 1000px) {
+    flex-direction: column;
+    padding: 15px 40px;
+    align-items: flex-start;
+  }
+
   @media (max-width: 1000px) {
     width: 100%;
     margin-left: 0;
+  }
+
+  @media (max-width: 650px) {
+    flex-direction: column;
+    padding: 15px 40px;
+    align-items: flex-start;
   }
 `
 
