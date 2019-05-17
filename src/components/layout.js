@@ -57,13 +57,25 @@ const BackgroundBox = styled.div`
   width: calc(50vw - (100vw - 100%) - 50px);
 
   border: 3px solid orange;
+  /* background-color: palegoldenrod; */
 
-  overflow: hidden;
+  /* overflow: hidden; */
+
+  background-image: url('/assets/photo3.jpg');
+  background-color: hsl(348.5, 50%, 90%);
+  background-blend-mode: multiply;
+  /* background-position: 50% 20%; */
+  background-repeat: no-repeat;
+  background-size: cover;
 
   @media (max-width: 1000px) {
+    background-position: 50% 10%;
+
     position: static;
-    height: 80vh;
+    /* height: 80vh; */
     width: 100%;
+    height: auto;
+    padding-top: 60%;
     /* width: calc(100vw - (100vw - 100%)); */
     /* width: 100vw; */
   }
