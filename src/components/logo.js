@@ -3,6 +3,8 @@ import React from 'react'
 import { StaticQuery, graphql } from 'gatsby'
 import styled from 'styled-components'
 
+import { Spring } from 'react-spring/renderprops'
+
 const StyledLogo = styled.div`
   height: 200px;
   width: 50px;
@@ -60,14 +62,23 @@ const Logo = () => (
       }
     `}
     render={data => (
-      <StyledLogo>
-        <h4>{data.site.siteMetadata.title}</h4>
-      </StyledLogo>
+      <>
+        {/* <Spring from={{ opacity: 0 }} to={{ opacity: 0.5 }}>
+        {props => (
+          <StyledLogo style={props}>
+            <h4>{data.site.siteMetadata.title}</h4>
+          </StyledLogo>
+        )}
+      </Spring> */}
+        <StyledLogo>
+          <h4>{data.site.siteMetadata.title}</h4>
+        </StyledLogo>
+      </>
     )}
   />
 )
 
-// const Logo = styled.div`
+// const gLogo = styled.div`
 //   position: fixed;
 //   top: 0;
 //   left: 0;

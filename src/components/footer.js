@@ -50,7 +50,7 @@ const StyledFooter = styled.footer`
   justify-content: space-between;
   align-items: center;
 
-  border: 3px solid blue;
+  /* border: 3px solid blue; */
 
   /* position: fixed;
   bottom: 0;

@@ -25,11 +25,11 @@ const ContentBox = styled.main`
   min-height: calc(100vh - 150px);
   width: 50vw;
   margin-left: calc(50vw - (100vw - 100%));
-  padding: 20px;
+  padding: 5%;
 
   /* CSS only for layout in dev stage */
-  background-color: pink;
-  border: 3px solid darkcyan;
+  /* background-color: pink; */
+  /* border: 3px solid darkcyan; */
 
   @media (max-width: 1000px) {
     width: 100%;
@@ -45,9 +45,9 @@ const BackgroundBox = styled.div`
   width: calc(50vw - (100vw - 100%) - 50px);
 
   /* CSS only for layout in dev stage */
-  border: 3px solid orange;
+  /* border: 3px solid orange; */
 
-  background-image: url('/assets/photo3.jpg');
+  background-image: url('/assets/hero1.jpg');
   background-color: hsl(348.5, 50%, 90%);
   background-blend-mode: multiply;
   background-position: 50% 20%;
@@ -59,7 +59,7 @@ const BackgroundBox = styled.div`
     width: 100%;
     height: auto;
     padding-bottom: 60%; /* This is the CSS trick to force a div to keep its aspect ratio */
-    background-position: 50% 10%;
+    background-position: 50% 40%;
   }
 `
 
