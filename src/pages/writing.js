@@ -1,18 +1,41 @@
 import React from 'react'
-import { Link } from 'gatsby'
+import { Link, graphql } from 'gatsby'
+import styled from 'styled-components'
 import Layout from '../components/layout'
 
-const WritingPage = () => (
-  <Layout>
-    <h1>Blog Posts</h1>
+const StyledLink = styled(Link)`
+  display: block;
+`
 
-    <Link to="/first-post">First post</Link>
+const WritingPage = ({ data }) => {
+  const { edges: posts } = data.allMarkdownRemark
+  const { posts: cmsposts } = data.blog
+
+  return (
+    <Layout>
+      <h1>Blog Posts from MD files</h1>
+      {posts.map(post => (
+        <StyledLink
+          to={post.node.frontmatter.slug}
+          key={post.node.frontmatter.slug}
+        >
+          {post.node.frontmatter.title}
+        </StyledLink>
+      ))}
+
+      <h1>Blog Posts from GraphCMS</h1>
+      {cmsposts.map(post => (
+        <StyledLink to={post.slug} key={post.slug}>
+          {post.title}
+        </StyledLink>
+      ))}
+
+      {/* <Link to="/first-post">First post</Link>
     <br />
     <Link to="/second-one">Second post</Link>
 
-    <h1>Writing</h1>
-
-    <p>
+    <h1>Writing</h1> */}
+      {/* <p>
       Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores omnis
       quas temporibus, neque sunt nostrum ab a, nemo provident nesciunt autem,
       numquam laborum vitae ipsa totam et sapiente. Delectus, suscipit. Lorem,
@@ -34,8 +57,32 @@ const WritingPage = () => (
       ipsum dolor, sit amet consectetur adipisicing elit. Voluptas perspiciatis
       eum dolorum voluptatem. Ad aperiam sed quae nam deserunt provident nulla
       nesciunt sint. Dolorem quia, cum sequi eveniet dolorum numquam!
-    </p>
-  </Layout>
-)
+    </p> */}
+    </Layout>
+  )
+}
 
 export default WritingPage
+
+export const PostListing = graphql`
+  query {
+    allMarkdownRemark {
+      edges {
+        node {
+          id
+          frontmatter {
+            title
+            slug
+          }
+          excerpt(pruneLength: 200)
+        }
+      }
+    }
+    blog {
+      posts {
+        title
+        slug
+      }
+    }
+  }
+`
