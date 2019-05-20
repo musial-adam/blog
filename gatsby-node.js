@@ -35,67 +35,16 @@ exports.createPages = ({ graphql, actions }) => {
           reject(result.errors)
         }
 
-        console.log('--------------------------------------------------')
-        console.log(result.data.blog.posts[0].title)
-        console.log('--------------------------------------------------')
-        // result.data.site.siteMetadata.forEach(({ node }) => {
-        //   console.log('--------------------------------------------------')
-        //   console.log(node)
-        //   console.log('--------------------------------------------------')
-        //   const path = node.slug
-        //   console.log('--------------------------------------------------')
-        //   console.log(path)
-        //   createPage({
-        //     path,
-        //     component: blogPostTemplate,
-        //     context: {
-        //       path,
-        //     },
-        //   })
-        // })
+        result.data.blog.posts.forEach(post => {
+          createPage({
+            path: post.slug,
+            component: blogPostTemplate,
+            context: {
+              data: post,
+            },
+          })
+        })
       })
     )
   })
 }
-
-// exports.createPages = ({ graphql, actions }) => {
-//   const { createPage } = actions
-
-//   return new Promise((resolve, reject) => {
-//     const blogPostTemplate = path.resolve(`src/templates/blog-post.js`)
-//     // Query for markdown nodes to use in creating pages.
-//     resolve(
-//       graphql(
-//         `
-//           {
-//             blog {
-//               posts {
-//                 title
-//                 content
-//                 slug
-//               }
-//             }
-//           }
-//         `
-//       ).then(result => {
-//         if (result.errors) {
-//           reject(result.errors)
-//         }
-
-//         // Create pages for each markdown file.
-//         result.data.blog.posts.forEach(({ node }) => {
-//           const path = node.slug
-//           createPage({
-//             path,
-//             component: blogPostTemplate,
-//             // In your blog post template's graphql query, you can use path
-//             // as a GraphQL variable to query for data from the markdown file.
-//             context: {
-//               path,
-//             },
-//           })
-//         })
-//       })
-//     )
-//   })
-// }
