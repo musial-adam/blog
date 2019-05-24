@@ -3,12 +3,26 @@ import PropTypes from 'prop-types'
 import Markdown from 'react-markdown'
 
 import { Link } from 'gatsby'
+import styled from 'styled-components'
 import Layout from '../components/layout'
+
+const StyledPost = styled.article`
+  code {
+    display: block;
+    background-color: grey;
+    border-radius: 10px;
+    padding: 20px;
+
+    color: pink;
+  }
+`
 
 const BlogPost = ({ pageContext: { data } }) => (
   <Layout>
     <h1>{data.title}</h1>
-    <Markdown source={data.content} escapeHtml={false} />
+    <StyledPost>
+      <Markdown source={data.content} escapeHtml={false} />
+    </StyledPost>
     {/* <p>{data.content}</p> */}
     <Link to="/">Go back</Link>
   </Layout>

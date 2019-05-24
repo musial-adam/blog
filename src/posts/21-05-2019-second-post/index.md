@@ -9,4 +9,5 @@ This post ALSOOOOO has been created from a markdown file.
 
 ```javascript
 const { x } = myObject
+this.willBe(highlighted);
 ```
