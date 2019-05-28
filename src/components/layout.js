@@ -13,6 +13,10 @@ import styled from 'styled-components'
 // import BackgroundImage from './background-image'
 import Footer from './footer'
 import Header from './header'
+
+import HeroImg from '../assets/images/hero3.jpg'
+
+// console.log(HeroImg)
 // import Image from './image'
 
 // import './layout.css'
@@ -47,7 +51,8 @@ const BackgroundBox = styled.div`
   /* CSS only for layout in dev stage */
   /* border: 3px solid orange; */
 
-  background-image: url('/assets/hero1.jpg');
+  background-image: url('${HeroImg}');
+  /* background-image: url('/assets/hero2.jpg'); */
   background-color: hsl(348.5, 50%, 90%);
   background-blend-mode: multiply;
   background-position: 50% 20%;

@@ -5,15 +5,15 @@ module.exports = {
     author: `@gatsbyjs`,
   },
   plugins: [
-    {
-      resolve: 'gatsby-plugin-react-svg',
-      options: {
-        rule: {
-          include: /assets/,
-        },
-      },
-    },
-    'gatsby-plugin-svg-sprite',
+    // {
+    //   resolve: 'gatsby-plugin-react-svg',
+    //   options: {
+    //     rule: {
+    //       include: /assets/,
+    //     },
+    //   },
+    // },
+    // 'gatsby-plugin-svg-sprite',
     // `gatsby-plugin-eslint`,
     // {
     //   resolve: 'gatsby-plugin-eslint',
@@ -68,22 +68,39 @@ module.exports = {
         plugins: [
           {
             resolve: `gatsby-remark-vscode`,
-            // All options are optional. Defaults shown here.
             options: {
-              colorTheme: 'Dark+ (default dark)', // Read on for list of included themes. Also accepts object and function forms.
-              wrapperClassName: '', // Additional class put on 'pre' tag
-              injectStyles: true, // Injects (minimal) additional CSS for layout and scrolling
-              extensions: [], // Extensions to download from the marketplace to provide more languages and themes
-              languageAliases: {}, // Map of custom/unknown language codes to standard/known language codes
-              replaceColor: x => x, // Function allowing replacement of a theme color with another. Useful for replacing hex colors with CSS variables.
-              getLineClassName: ({
-                // Function allowing dynamic setting of additional class names on individual lines
-                content, //   - the string content of the line
-                index, //   - the zero-based index of the line within the code fence
-                language, //   - the language specified for the code fence
-                codeFenceOptions, //   - any options set on the code fence alongside the language (more on this later)
-              }) => '',
+              colorTheme: 'One Dark Pro',
+              extensions: [
+                // {
+                //   identifier: 'naumovs.theme-oceanicnext',
+                //   version: '0.0.4',
+                // },
+                {
+                  identifier: 'leveluptutorials.theme-levelup',
+                  version: '0.1.2',
+                },
+                {
+                  identifier: 'zhuangtongfa.Material-theme',
+                  version: '2.23.2',
+                },
+              ],
             },
+            // All options are optional. Defaults shown here.
+            // options: {
+            //   colorTheme: 'Dark+ (default dark)', // Read on for list of included themes. Also accepts object and function forms.
+            //   wrapperClassName: '', // Additional class put on 'pre' tag
+            //   injectStyles: true, // Injects (minimal) additional CSS for layout and scrolling
+            //   extensions: [], // Extensions to download from the marketplace to provide more languages and themes
+            //   languageAliases: {}, // Map of custom/unknown language codes to standard/known language codes
+            //   replaceColor: x => x, // Function allowing replacement of a theme color with another. Useful for replacing hex colors with CSS variables.
+            //   getLineClassName: ({
+            //     // Function allowing dynamic setting of additional class names on individual lines
+            //     content, //   - the string content of the line
+            //     index, //   - the zero-based index of the line within the code fence
+            //     language, //   - the language specified for the code fence
+            //     codeFenceOptions, //   - any options set on the code fence alongside the language (more on this later)
+            //   }) => '',
+            // },
           },
         ],
       },

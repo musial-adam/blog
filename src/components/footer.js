@@ -21,6 +21,10 @@ const FooterText = styled.div`
   padding: 0;
   /* margin-right: 50px; */
   flex-shrink: 0;
+
+  a {
+    background-image: none;
+  }
 `
 
 const SVGsBox = styled.div`
@@ -80,11 +84,32 @@ const Footer = () => (
       © {new Date().getFullYear()} {` `} Adam Musiał
       <br />
       Built with {` `}
-      <a href="https://www.gatsbyjs.org">Gatsby</a>
+      {/* <a
+        href="https://www.gatsbyjs.org"
+        target="_blank"
+        rel="noreferrer noopener"
+      >
+        <FooterSVG icon="gatsby" />
+      </a> */}
+      <a
+        href="https://www.gatsbyjs.org"
+        target="_blank"
+        rel="noreferrer noopener"
+      >
+        Gatsby
+      </a>
       {`, `}
-      <a href="https://graphcms.com/">GraphCMS</a>
+      <a href="https://graphcms.com/" target="_blank" rel="noreferrer noopener">
+        GraphCMS
+      </a>
       {` & `}
-      <a href="https://www.styled-components.com/">styled-components</a>
+      <a
+        href="https://www.styled-components.com/"
+        target="_blank"
+        rel="noreferrer noopener"
+      >
+        styled-components
+      </a>
       {`.`}
     </FooterText>
     <SVGsBox>

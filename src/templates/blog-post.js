@@ -7,14 +7,14 @@ import styled from 'styled-components'
 import Layout from '../components/layout'
 
 const StyledPost = styled.article`
-  code {
+  /* code {
     display: block;
     background-color: grey;
     border-radius: 10px;
     padding: 20px;
 
     color: pink;
-  }
+  } */
 `
 
 const BlogPost = ({ pageContext: { data } }) => (
