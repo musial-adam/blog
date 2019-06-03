@@ -23,10 +23,13 @@ module.exports = {
 				"printWidth": 80,
 				"useTabs": false,
 			}
-		],
+    ],
+    "react-hooks/rules-of-hooks": "error",
+    "react-hooks/exhaustive-deps": "warn"
 	},
 	"parser": "babel-eslint",
 	"plugins": [
-		"prettier"
+    "prettier",
+    "react-hooks"
 	]
 }

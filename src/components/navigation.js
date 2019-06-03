@@ -2,8 +2,6 @@ import React from 'react'
 import { Link } from 'gatsby'
 import styled from 'styled-components'
 
-import './navigation.css'
-
 const StyledNav = styled.nav`
   height: 50px;
   width: 50vw;
@@ -18,7 +16,6 @@ const StyledNav = styled.nav`
   }
 
   box-sizing: border-box;
-  /* flex-shrink: 0; /* Navigation if flex item within flex container - this blocks it from shrinking */
 
   display: flex;
   justify-content: center;
@@ -26,31 +23,15 @@ const StyledNav = styled.nav`
 
   position: absolute;
   right: 0;
-  /* top: 0; */
-  /* z-index: 1000; */
   background-color: white;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
-  /* border: 3px solid red; */
+  border-bottom: 1px solid ${({ theme }) => theme.lightGrey1};
 `
-// const StyledNav = styled.nav`
-//   box-sizing: border-box;
-//   height: 50px;
-//   flex-shrink: 0; /* Navigation if flex item within flex container - this blocks it from shrinking */
-//   display: flex;
-//   justify-content: center;
-//   align-items: center;
-//   position: sticky;
-//   top: 0;
-//   z-index: 1000;
-//   background-color: white;
-//   border-bottom: 1px solid rgba(0, 0, 0, 0.1);
-// `
 
 const StyledLink = styled(Link)`
   font-size: 14px;
   font-family: 'Roboto Mono';
   font-weight: 300;
-  color: #444444;
+  color: ${({ theme }) => theme.textColor};
   text-shadow: none;
   text-decoration: none;
   background-image: none;
@@ -66,8 +47,16 @@ const StyledLink = styled(Link)`
   }
 
   &:hover {
-    color: #0077dd;
+    color: ${({ theme }) => theme.accentLight};
     cursor: pointer;
+  }
+
+  &.activeLink {
+    border-bottom: 1px solid ${({ theme }) => theme.textColor};
+
+    &:hover {
+      border-bottom: 1px solid ${({ theme }) => theme.accentLight};
+    }
   }
 `
 

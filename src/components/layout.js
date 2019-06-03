@@ -8,18 +8,16 @@
 // import { StaticQuery, graphql } from 'gatsby'
 import PropTypes from 'prop-types'
 import React from 'react'
-import styled from 'styled-components'
+import styled, { ThemeProvider } from 'styled-components'
+
+import GlobalStyle from '../utils/global-styles'
+import Theme from '../utils/theme'
 
 // import BackgroundImage from './background-image'
 import Footer from './footer'
 import Header from './header'
 
 import HeroImg from '../assets/images/hero3.jpg'
-
-// console.log(HeroImg)
-// import Image from './image'
-
-// import './layout.css'
 
 const LayoutContainer = styled.div`
   position: relative;
@@ -29,14 +27,15 @@ const ContentBox = styled.main`
   min-height: calc(100vh - 150px);
   width: 50vw;
   margin-left: calc(50vw - (100vw - 100%));
-  padding: 5%;
+  /* padding: 20px 50px; */
+  padding: 60px 50px 20px 50px;
 
   /* CSS only for layout in dev stage */
-  /* background-color: pink; */
-  /* border: 3px solid darkcyan; */
+  /* border: 3px solid yellow; */
 
   @media (max-width: 1000px) {
     width: 100%;
+    min-height: auto;
     margin-left: 0;
   }
 `
@@ -69,12 +68,17 @@ const BackgroundBox = styled.div`
 `
 
 const Layout = ({ children }) => (
-  <LayoutContainer>
-    <Header />
-    <BackgroundBox>{/* <BackgroundImage /> */}</BackgroundBox>
-    <ContentBox>{children}</ContentBox>
-    <Footer />
-  </LayoutContainer>
+  <ThemeProvider theme={Theme}>
+    <>
+      <GlobalStyle />
+      <LayoutContainer>
+        <Header />
+        <BackgroundBox>{/* <BackgroundImage /> */}</BackgroundBox>
+        <ContentBox>{children}</ContentBox>
+        <Footer />
+      </LayoutContainer>
+    </>
+  </ThemeProvider>
 )
 
 Layout.propTypes = {
