@@ -9,26 +9,25 @@ import Layout from '../components/layout'
 // import SEO from '../components/seo'
 
 const Wrapper = styled.section`
-  color: ${({ theme }) => theme.secondary};
-  /* color: #444444; */
+  color: ${({ theme }) => theme.textColor};
 
   h1 {
     font-weight: 100;
     font-family: sans-serif;
-    color: #7f7f7f;
+    color: ${({ theme }) => theme.lightGrey2};
     line-height: 1.3;
     margin-bottom: 50px;
 
     strong {
       font-weight: 100;
-      color: #333333;
+      color: ${({ theme }) => theme.darkGrey};
     }
   }
 
   table {
     font-family: 'Roboto Mono';
-    border-top: 1px solid #e5e5e5;
-    border-bottom: 1px solid #e5e5e5;
+    border-top: 1px solid ${({ theme }) => theme.lightGrey1};
+    border-bottom: 1px solid ${({ theme }) => theme.lightGrey1};
     table-layout: fixed;
 
     th,
@@ -41,12 +40,12 @@ const Wrapper = styled.section`
     }
 
     td {
-      color: #444444;
+      color: ${({ theme }) => theme.textColor};
     }
 
     th {
       text-transform: uppercase;
-      color: #7f7f7f;
+      color: ${({ theme }) => theme.lightGrey2};
     }
   }
 `

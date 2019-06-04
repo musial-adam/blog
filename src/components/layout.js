@@ -5,10 +5,11 @@
  * See: https://www.gatsbyjs.org/docs/static-query/
  */
 
-// import { StaticQuery, graphql } from 'gatsby'
+import { StaticQuery, graphql } from 'gatsby'
 import PropTypes from 'prop-types'
 import React from 'react'
 import styled, { ThemeProvider } from 'styled-components'
+import Img from 'gatsby-image'
 
 import GlobalStyle from '../utils/global-styles'
 import Theme from '../utils/theme'
@@ -50,7 +51,7 @@ const BackgroundBox = styled.div`
   /* CSS only for layout in dev stage */
   /* border: 3px solid orange; */
 
-  background-image: url('${HeroImg}');
+  /* background-image: url('${HeroImg}'); */
   /* background-image: url('/assets/hero2.jpg'); */
   background-color: hsl(348.5, 50%, 90%);
   background-blend-mode: multiply;
@@ -67,19 +68,59 @@ const BackgroundBox = styled.div`
   }
 `
 
+const StyledImg = styled(Img)`
+  height: 100vh;
+  @media (max-width: 1000px) {
+    width: 100%
+    height: auto;
+  }
+`
+
 const Layout = ({ children }) => (
   <ThemeProvider theme={Theme}>
-    <>
-      <GlobalStyle />
-      <LayoutContainer>
-        <Header />
-        <BackgroundBox>{/* <BackgroundImage /> */}</BackgroundBox>
-        <ContentBox>{children}</ContentBox>
-        <Footer />
-      </LayoutContainer>
-    </>
+    <StaticQuery
+      query={graphql`
+        query BackgroundQuery {
+          file(relativePath: { eq: "hero3.jpg" }) {
+            id
+            absolutePath
+            childImageSharp {
+              fluid(maxWidth: 2000) {
+                ...GatsbyImageSharpFluid_tracedSVG
+              }
+            }
+          }
+        }
+      `}
+      render={data => (
+        <>
+          <GlobalStyle />
+          <LayoutContainer>
+            <Header />
+            <BackgroundBox>
+              <StyledImg fluid={data.file.childImageSharp.fluid} />
+            </BackgroundBox>
+            <ContentBox>{children}</ContentBox>
+            <Footer />
+          </LayoutContainer>
+        </>
+      )}
+    />
   </ThemeProvider>
 )
+// const Layout = ({ children }) => (
+//   <ThemeProvider theme={Theme}>
+//     <>
+//       <GlobalStyle />
+//       <LayoutContainer>
+//         <Header />
+//         <BackgroundBox>{/* <BackgroundImage /> */}</BackgroundBox>
+//         <ContentBox>{children}</ContentBox>
+//         <Footer />
+//       </LayoutContainer>
+//     </>
+//   </ThemeProvider>
+// )
 
 Layout.propTypes = {
   children: PropTypes.node.isRequired,

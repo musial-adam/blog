@@ -1,82 +1,55 @@
 import React from 'react'
 import styled from 'styled-components'
+import { graphql } from 'gatsby'
+import Img from 'gatsby-image'
 
 import Layout from '../components/layout'
 
-import avatar from '../assets/images/avatar1.jpg'
-
-// const Avatar = styled.div`
-//   height: 200px;
-//   width: 200px;
-//   background-image: url('${avatar}');
-//   background-size: cover;
-//   background-position: 0px -16px;
-//   clip-path: circle(50% at 50% 50%);
-// `
-
-const Avatar = styled.img`
-  height: auto;
-  width: 50%;
-  clip-path: circle(30% at 50% 35%);
-  /* clip-path: circle(50% at 50% 50%); */
-  margin-left: -10%;
-  margin-bottom: 0;
+const Avatar = styled(Img)`
+  box-sizing: border-box;
+  width: 40%;
+  margin: 8px 0 20px 20px;
+  border-radius: 100%;
+  border: 2px solid ${({ theme }) => theme.accentLight};
+  float: right;
 `
 
-// const Avatar2 = styled.img`
-//   height: auto;
-//   width: 50%;
-//   border-radius: 100%;
-//   border: 2px solid red;
-// `
-
-const Button = styled.button`
-  background: none;
-  border: none;
+const AboutWrapper = styled.section`
   position: relative;
-  z-index: 2;
-  color: black;
-
-  ::before {
-    content: '';
-    position: absolute;
-    top: 5px;
-    left: -5px;
-    width: 100%;
-    height: 100%;
-    z-index: -1;
-    background-color: orange;
-    transition: transform ease-in-out 0.1s;
-  }
-
-  ::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    border: 2px solid black;
-  }
-
-  &:hover {
-    cursor: pointer;
-    ::before {
-      transform: translate(5px, -5px);
-    }
-  }
+  border-top: 1px solid ${({ theme }) => theme.lightGrey1};
+  border-bottom: 1px solid ${({ theme }) => theme.lightGrey1};
+  padding: 50px 0px;
 `
 
-const AboutPage = () => (
+const AboutPage = ({ data }) => (
   <Layout>
     <h1>About</h1>
-
-    <Button>ale fajny button</Button>
-
-    {/* <Avatar src={avatar} /> */}
-    <br />
-    {/* <Avatar2 src={avatar} /> */}
+    <AboutWrapper>
+      <Avatar fluid={data.file.childImageSharp.fluid} />
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. At quasi
+        exercitationem corrupti tempora distinctio est, modi sint a recusandae
+        vero commodi delectus saepe qui consectetur ipsum ut quo officia minima!
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam, sequi
+        eaque dicta, maiores error aliquid nostrum necessitatibus provident in
+        quasi nam, nesciunt velit. At quos ad provident veniam odio explicabo?
+      </p>
+    </AboutWrapper>
   </Layout>
 )
 
 export default AboutPage
+
+export const avatarQuery = graphql`
+  query {
+    file(relativePath: { eq: "me.jpg" }) {
+      id
+      absolutePath
+      childImageSharp {
+        fluid(maxWidth: 500) {
+          ...GatsbyImageSharpFluid_tracedSVG
+        }
+      }
+    }
+  }
+`
