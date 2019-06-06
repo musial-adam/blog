@@ -83,25 +83,22 @@ const GeoDetails = styled.div`
 
 const GeoLocation = () => {
   const [isOpen, setGeoState] = useState(false)
-  console.log(isOpen)
 
   const toggleGeo = () => setGeoState(!isOpen)
-
-  console.log(isOpen)
 
   return (
     <>
       <GeoContainer onClick={toggleGeo}>
-        <SVGIcon icon="instagram" fill="#7f7f7f" />
+        <SVGIcon icon="location" fill="#7f7f7f" />
       </GeoContainer>
       <GeoDetails isOpen={isOpen}>
-        <h4>Photo location</h4>
+        <h4>My location</h4>
         <p>
           Wrocław, PL <br />
-          39.0580° N <br />
-          107.0192° W <br />
+          51.0639° N <br />
+          16.9931° E <br />
         </p>
-        <h5>Photo NOT by Adam Musial</h5>
+        <h5>Photo by Safar Safarov on Unsplash</h5>
       </GeoDetails>
     </>
   )

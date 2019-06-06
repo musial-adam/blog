@@ -2,7 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 import PropTypes from 'prop-types'
 
-// Styled component to easily adjust SVG icon parameters
+import Icons from '../assets/icons/symbol-defs.svg'
 
 const StyledSVG = styled.svg`
   box-sizing: border-box;
@@ -15,11 +15,11 @@ const StyledSVG = styled.svg`
 // className is added here only to allow styles override with styled method from styled-components
 
 const SVGIcon = ({ className, icon, fill }) => {
-  const iconID = `/assets/symbol-defs.svg#icon-${icon}`
+  const Icon = `${Icons}#icon-${icon}`
 
   return (
     <StyledSVG className={className} style={{ fill }}>
-      <use xlinkHref={iconID} />
+      <use xlinkHref={Icon} />
     </StyledSVG>
   )
 }
