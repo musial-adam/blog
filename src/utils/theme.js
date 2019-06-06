@@ -1,6 +1,5 @@
 const theme = {
-  // seems to not be used
-  // accentDark: '#006cd8',
+  // COLORS
 
   // link hover, active link hover
   accentLight: '#0077dd',
@@ -16,6 +15,11 @@ const theme = {
 
   // headline span
   darkGrey: '#333333',
+
+  // FONTS
+
+  headerFont: '"Roboto Mono", monospace',
+  bodyFont: '"Lato", sans-serif',
 }
 
 export default theme

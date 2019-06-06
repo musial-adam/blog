@@ -9,7 +9,7 @@ const StyledLogo = styled.div`
   height: 200px;
   width: 50px;
   flex-shrink: 0;
-  background-color: black;
+  background-color: ${({ theme }) => theme.darkGrey};
 
   display: flex;
   justify-content: center;
@@ -35,7 +35,7 @@ const StyledLogo = styled.div`
 
   &:hover {
     cursor: pointer;
-    background-color: rgba(0, 0, 0, 0.8);
+    background-color: ${({ theme }) => theme.textColor};
   }
 
   h4 {

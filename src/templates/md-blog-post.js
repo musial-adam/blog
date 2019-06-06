@@ -19,12 +19,12 @@ const MarkdownWrapper = styled.div`
 `
 
 const MarkdownBlogPost = ({ pageContext: { data } }) => (
-  <Layout>
+  <>
     <h1>{data.frontmatter.title}</h1>
     {/* {console.log(data)} */}
     <MarkdownWrapper dangerouslySetInnerHTML={{ __html: data.html }} />
     <Link to="/">Go back</Link>
-  </Layout>
+  </>
 )
 
 MarkdownBlogPost.propTypes = {

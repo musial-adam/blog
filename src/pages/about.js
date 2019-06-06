@@ -22,7 +22,7 @@ const AboutWrapper = styled.section`
 `
 
 const AboutPage = ({ data }) => (
-  <Layout>
+  <>
     <h1>About</h1>
     <AboutWrapper>
       <Avatar fluid={data.file.childImageSharp.fluid} />
@@ -35,14 +35,14 @@ const AboutPage = ({ data }) => (
         quasi nam, nesciunt velit. At quos ad provident veniam odio explicabo?
       </p>
     </AboutWrapper>
-  </Layout>
+  </>
 )
 
 export default AboutPage
 
 export const avatarQuery = graphql`
   query {
-    file(relativePath: { eq: "me.jpg" }) {
+    file(relativePath: { eq: "avatar1.jpg" }) {
       id
       absolutePath
       childImageSharp {

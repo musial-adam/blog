@@ -29,7 +29,7 @@ const StyledNav = styled.nav`
 
 const StyledLink = styled(Link)`
   font-size: 14px;
-  font-family: 'Roboto Mono';
+  font-family: ${({ theme }) => theme.headerFont};
   font-weight: 300;
   color: ${({ theme }) => theme.textColor};
   text-shadow: none;
@@ -65,8 +65,8 @@ const Navigation = () => (
     <StyledLink to="/" activeClassName="activeLink">
       Home
     </StyledLink>
-    <StyledLink to="/writing" activeClassName="activeLink">
-      Writing
+    <StyledLink to="/blog" activeClassName="activeLink">
+      Blog
     </StyledLink>
     <StyledLink to="/reading" activeClassName="activeLink">
       Reading

@@ -10,10 +10,11 @@ import Layout from '../components/layout'
 
 const Wrapper = styled.section`
   color: ${({ theme }) => theme.textColor};
+  font-family: ${({ theme }) => theme.bodyFont};
 
   h1 {
     font-weight: 100;
-    font-family: sans-serif;
+    font-family: ${({ theme }) => theme.bodyFont};
     color: ${({ theme }) => theme.lightGrey2};
     line-height: 1.3;
     margin-bottom: 50px;
@@ -25,7 +26,7 @@ const Wrapper = styled.section`
   }
 
   table {
-    font-family: 'Roboto Mono';
+    font-family: ${({ theme }) => theme.headerFont};
     border-top: 1px solid ${({ theme }) => theme.lightGrey1};
     border-bottom: 1px solid ${({ theme }) => theme.lightGrey1};
     table-layout: fixed;
@@ -51,15 +52,12 @@ const Wrapper = styled.section`
 `
 
 const IndexPage = ({ data }) => (
-  <Layout>
-    {/* <SEO title="Home" keywords={[`gatsby`, `application`, `react`]} /> */}
-    <Wrapper>
-      <Markdown
-        source={data.blog.indexPages[0].indexContent}
-        escapeHtml={false}
-      />
-    </Wrapper>
-  </Layout>
+  <Wrapper>
+    <Markdown
+      source={data.blog.indexPages[0].indexContent}
+      escapeHtml={false}
+    />
+  </Wrapper>
 )
 
 export default IndexPage

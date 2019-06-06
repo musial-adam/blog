@@ -1,21 +1,17 @@
 import Typography from 'typography'
 
-// import kirkhamTheme from 'typography-theme-kirkham'
-
-// const typography = new Typography(kirkhamTheme)
-
-import lincolnTheme from 'typography-theme-lincoln'
-
-// console.log(lincolnTheme.headerFontFamily)
-
-lincolnTheme.headerFontFamily = [
-  'monospace',
-  'Droid Sans Mono',
-  'PT Mono',
-  'Varela Round',
-  'sans-serif',
-]
-
-const typography = new Typography(lincolnTheme)
+const typography = new Typography({
+  title: 'simpleBlogTheme',
+  baseFontSize: '16px',
+  baseLineHeight: 1.5,
+  headerFontFamily: ['Roboto Mono', 'monospace'],
+  headerGray: 20,
+  headerWeight: 500,
+  bodyFontFamily: ['Lato', 'sans-serif'],
+  bodyGray: 20,
+  bodyWeight: 400,
+  boldWeight: 700,
+  includeNormalize: true,
+})
 
 export default typography

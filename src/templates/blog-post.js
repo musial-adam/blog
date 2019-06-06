@@ -18,14 +18,14 @@ const StyledPost = styled.article`
 `
 
 const BlogPost = ({ pageContext: { data } }) => (
-  <Layout>
+  <>
     <h1>{data.title}</h1>
     <StyledPost>
       <Markdown source={data.content} escapeHtml={false} />
     </StyledPost>
     {/* <p>{data.content}</p> */}
     <Link to="/">Go back</Link>
-  </Layout>
+  </>
 )
 
 BlogPost.propTypes = {

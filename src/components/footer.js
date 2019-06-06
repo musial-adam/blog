@@ -1,29 +1,27 @@
 import React from 'react'
-
 import styled from 'styled-components'
 
 import SVGIcon from './svg-icon'
 
 const FooterSVG = styled(SVGIcon)`
-  fill: rgba(0, 0, 0, 0.5);
+  fill: ${({ theme }) => theme.lightGrey2};
   width: 16px;
   height: 16px;
 
   &:hover {
-    fill: #444444;
+    fill: ${({ theme }) => theme.textColor};
     cursor: pointer;
   }
 `
 
 const FooterText = styled.div`
-  /* border: 1px dashed black; */
   min-width: 410px;
   padding: 0;
-  /* margin-right: 50px; */
   flex-shrink: 0;
 
   a {
     background-image: none;
+    color: ${({ theme }) => theme.accentLight};
   }
 `
 
@@ -37,28 +35,19 @@ const SVGsBox = styled.div`
 
 const StyledFooter = styled.footer`
   box-sizing: border-box;
-  border-top: 1px solid rgba(0, 0, 0, 0.1);
+  border-top: 1px solid ${({ theme }) => theme.lightGrey1};
   height: 100px;
   width: 50vw;
   margin-left: calc(50vw - (100vw - 100%));
-  font-family: 'Roboto Mono';
+  font-family: ${({ theme }) => theme.headerFont};
   font-size: 14px;
   font-weight: 300;
-  color: #444444;
+  color: ${({ theme }) => theme.textColor};
   background-color: white;
   padding: 30px 40px;
-  /* overflow: hidden; */
-  /*flex-shrink: 0;  Footer if flex item within flex container - this blocks it from shrinking */
   display: flex;
-  /* flex-wrap: wrap; */
   justify-content: space-between;
   align-items: center;
-
-  /* border: 3px solid blue; */
-
-  /* position: fixed;
-  bottom: 0;
-  right: 0; */
 
   @media (max-width: 1300px) and (min-width: 1000px) {
     flex-direction: column;
