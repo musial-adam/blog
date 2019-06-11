@@ -1,6 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 import { graphql } from 'gatsby'
+import Markdown from 'react-markdown'
 import Img from 'gatsby-image'
 
 import Layout from '../components/layout'
@@ -26,21 +27,22 @@ const AboutPage = ({ data }) => (
     <h1>About</h1>
     <AboutWrapper>
       <Avatar fluid={data.file.childImageSharp.fluid} />
-      <p>
+      {/* <p>
         Lorem ipsum dolor sit amet consectetur adipisicing elit. At quasi
         exercitationem corrupti tempora distinctio est, modi sint a recusandae
         vero commodi delectus saepe qui consectetur ipsum ut quo officia minima!
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam, sequi
         eaque dicta, maiores error aliquid nostrum necessitatibus provident in
         quasi nam, nesciunt velit. At quos ad provident veniam odio explicabo?
-      </p>
+      </p> */}
+      <Markdown source={data.blog.pages[0].content} escapeHtml={false} />
     </AboutWrapper>
   </>
 )
 
 export default AboutPage
 
-export const avatarQuery = graphql`
+export const aboutPageQuery = graphql`
   query {
     file(relativePath: { eq: "avatar1.jpg" }) {
       id
@@ -49,6 +51,13 @@ export const avatarQuery = graphql`
         fluid(maxWidth: 500) {
           ...GatsbyImageSharpFluid_tracedSVG
         }
+      }
+    }
+
+    blog {
+      pages(where: { name: "about" }) {
+        name
+        content
       }
     }
   }
