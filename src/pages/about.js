@@ -1,7 +1,8 @@
 import React from 'react'
 import styled from 'styled-components'
 import { graphql } from 'gatsby'
-import Markdown from 'react-markdown'
+// import Markdown from 'react-markdown/'
+import Markdown from 'react-markdown/with-html'
 import Img from 'gatsby-image'
 
 import Layout from '../components/layout'
@@ -18,8 +19,20 @@ const Avatar = styled(Img)`
 const AboutWrapper = styled.section`
   position: relative;
   border-top: 1px solid ${({ theme }) => theme.lightGrey1};
-  border-bottom: 1px solid ${({ theme }) => theme.lightGrey1};
+  /* border-bottom: 1px solid ${({ theme }) => theme.lightGrey1}; */
   padding: 50px 0px;
+  
+  
+  a {
+    color: ${({ theme }) => theme.textColor};
+    text-decoration: none;
+    border-bottom: 1px solid ${({ theme }) => theme.accentLight};
+    padding-bottom: 2px;
+    
+    &:hover {
+      color: ${({ theme }) => theme.accentLight};
+    }
+  }
 `
 
 const AboutPage = ({ data }) => (
