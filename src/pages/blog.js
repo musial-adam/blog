@@ -83,7 +83,7 @@ const BlogPage = ({ data }) => {
 
   return (
     <>
-      <h2>Blog Posts from MD files</h2>
+      {/* <h2>Blog Posts from MD files</h2>
       {posts.map(post => (
         <StyledLink
           to={post.node.frontmatter.slug}
@@ -91,7 +91,7 @@ const BlogPage = ({ data }) => {
         >
           {post.node.frontmatter.title}
         </StyledLink>
-      ))}
+      ))} */}
 
       <h1>Blog Posts from GraphCMS</h1>
       {cmsposts.map(post => (

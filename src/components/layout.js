@@ -35,6 +35,8 @@ const ContentBox = styled.main`
 `
 
 const BackgroundBox = styled.div`
+  /* background-color: ${({ theme }) => theme.accentLight}; */
+  background-color: rgb(0,119,221,0.5);
   position: fixed;
   top: 0;
   left: 50px;
@@ -65,6 +67,24 @@ const BackgroundBox = styled.div`
 
 const StyledImg = styled(Img)`
   height: 100vh;
+  filter: grayscale(1);
+
+  /* mix-blend-mode: normal; */
+  mix-blend-mode: multiply;
+  /* mix-blend-mode: screen; */
+  /* mix-blend-mode: overlay; */
+  /* mix-blend-mode: darken; */
+  /* mix-blend-mode: lighten; */
+  /* mix-blend-mode: color-dodge; */
+  /* mix-blend-mode: color-burn; */
+  /* mix-blend-mode: hard-light; */
+  /* mix-blend-mode: soft-light; */
+  /* mix-blend-mode: difference; */
+  /* mix-blend-mode: exclusion; */
+  /* mix-blend-mode: hue; */
+  /* mix-blend-mode: saturation; */
+  /* mix-blend-mode: color; */
+  /* mix-blend-mode: luminosity; */
 
   @media (max-width: 1000px) {
     width: 100%;

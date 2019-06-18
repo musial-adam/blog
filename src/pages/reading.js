@@ -46,7 +46,7 @@ const ReadingPage = ({
   },
 }) => (
   <>
-    <h1>Currently on my nightstand...</h1>
+    <h1>Currently among my opened tabs</h1>
     <ReadingItemsList>
       {readingItems.map(item => (
         <ReadingItem key={item.url}>
