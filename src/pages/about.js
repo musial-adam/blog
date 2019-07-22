@@ -1,11 +1,8 @@
 import React from 'react'
 import styled from 'styled-components'
 import { graphql } from 'gatsby'
-// import Markdown from 'react-markdown/'
 import Markdown from 'react-markdown/with-html'
 import Img from 'gatsby-image'
-
-import Layout from '../components/layout'
 
 const Avatar = styled(Img)`
   box-sizing: border-box;

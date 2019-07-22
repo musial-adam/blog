@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 import { graphql } from 'gatsby'
-import Markdown from 'react-markdown'
+import PropTypes from 'prop-types'
 
 const ReadingItemsList = styled.ul`
   margin: 0;
@@ -18,7 +18,6 @@ const ReadingItemLink = styled.a`
   text-decoration: none;
   color: ${({ theme }) => theme.accentLight};
   font-family: ${({ theme }) => theme.bodyFont};
-  /* padding-bottom: 2px; */
   margin-bottom: 9px;
 
   &:hover {
@@ -40,48 +39,51 @@ const ReadingItemDate = styled.p`
   font-size: 14px;
 `
 
-const ReadingPage = ({
-  data: {
-    blog: { readingItems },
-  },
-}) => (
-  <>
-    <h1>Currently among my opened tabs</h1>
-    <ReadingItemsList>
-      {readingItems.map(item => (
-        <ReadingItem key={item.url}>
-          <ReadingItemLink
-            href={item.url}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            {item.title}
-          </ReadingItemLink>
-          <ReadingItemDescription>{item.description}</ReadingItemDescription>
-          <ReadingItemDate>
-            {new Date(item.dateAdded).toLocaleDateString('en-GB', {
-              day: 'numeric',
-              month: 'long',
-              year: 'numeric',
-            })}
-          </ReadingItemDate>
-        </ReadingItem>
-      ))}
-    </ReadingItemsList>
-    {/* 
-    <ReadingItem>
-      <ReadingItemLink href="http://destroytoday.com/writings/burning-out-and-finding-stability/">
-        Burning Out and Finding Stability
-      </ReadingItemLink>
-      <ReadingItemDescription>
-        Jonnie Hallman shares the news that he’s joining Stripe with an open,
-        honest account of his struggle with burnout and anxiety that preceded
-        the decision.
-      </ReadingItemDescription>
-      <ReadingItemDate>06 Jun 2019</ReadingItemDate>
-    </ReadingItem> */}
-  </>
-)
+const ReadingPage = ({ data }) => {
+  const { readingItems } = data.blog
+
+  return (
+    <>
+      <h1>Currently among my opened tabs</h1>
+      <ReadingItemsList>
+        {readingItems.map(item => (
+          <ReadingItem key={item.url}>
+            <ReadingItemLink
+              href={item.url}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              {item.title}
+            </ReadingItemLink>
+            <ReadingItemDescription>{item.description}</ReadingItemDescription>
+            <ReadingItemDate>
+              {new Date(item.dateAdded).toLocaleDateString('en-GB', {
+                day: 'numeric',
+                month: 'long',
+                year: 'numeric',
+              })}
+            </ReadingItemDate>
+          </ReadingItem>
+        ))}
+      </ReadingItemsList>
+    </>
+  )
+}
+
+ReadingPage.propTypes = {
+  data: PropTypes.shape({
+    blog: PropTypes.shape({
+      readingItems: PropTypes.arrayOf(
+        PropTypes.shape({
+          title: PropTypes.string,
+          url: PropTypes.string,
+          description: PropTypes.string,
+          dateAdded: PropTypes.string,
+        })
+      ),
+    }),
+  }).isRequired,
+}
 
 export default ReadingPage
 

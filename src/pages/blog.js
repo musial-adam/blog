@@ -27,6 +27,8 @@ const StyledLink = styled(Link)`
 
   position: relative;
   overflow: hidden;
+  
+  width: fit-content;
 
   &::before {
     z-index: -1;
@@ -130,7 +132,7 @@ export const PostListing = graphql`
       }
     }
     blog {
-      posts {
+      posts(orderBy: dateAndTime_DESC) {
         title
         description
         slug
